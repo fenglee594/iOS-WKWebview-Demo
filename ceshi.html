@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试JS+OC交互</title>
+	<script type="text/javascript">
+	function h5ButtonClicked() 
+	{
+		//js调用OC
+		window.webkit.messageHandlers.DSLFTest.postMessage('你好啊');
+	}
+
+	function ocTransferJs(a) {
+		//oc调用js
+		//改变div1的文字
+		document.getElementById("div1").innerHTML=a;
+
+	}
+
+
+</script>
+</head>
+<body>
+	<div style="flex: 1">
+		<div id="div1" style="height: 30px;text-align: center;top: 200px;font-size: 30pt;">	这是一个测试文件
+		</div>
+		<div style="text-align: center; margin-top: 40px">
+			<button type="button" onclick="h5ButtonClicked()" style=" font-size: 30pt">
+			点击弹窗
+			</button>
+		</div>
+		
+	</div>
+	
+</body>
+
+
+
+</html>
